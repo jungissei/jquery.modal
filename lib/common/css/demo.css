@@ -1,4 +1,207 @@
 @charset "UTF-8";
+.hm_btn {
+  display: block;
+  position: fixed;
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  padding: 25px 0;
+  z-index: 3;
+  /* ページロード時アニメーション ここから*/
+  /* ページロード時アニメーション ここまで*/
+  /* ボタン押下時アニメーション ここから*/
+  /* ボタン押下時アニメーション ここまで*/
+}
+.hm_btn span[class^=btn_line] {
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #333;
+  width: 60%;
+  height: 1px;
+}
+.hm_btn .btn_line_top {
+  top: 30%;
+}
+.hm_btn .btn_line_middle {
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.hm_btn .btn_line_bottom {
+  bottom: 30%;
+}
+.hm_btn .btn_line_top {
+  -webkit-animation: btn_line_top 0.75s forwards;
+          animation: btn_line_top 0.75s forwards;
+}
+@-webkit-keyframes btn_line_top {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: calc(50% - (1px / 2));
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: 30%;
+  }
+}
+@keyframes btn_line_top {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: calc(50% - (1px / 2));
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: 30%;
+  }
+}
+.hm_btn .menu_btn_middle {
+  -webkit-transition: all 0.25s 0.25s;
+  transition: all 0.25s 0.25s;
+  opacity: 1;
+}
+.hm_btn .btn_line_bottom {
+  -webkit-animation: btn_line_bottom 0.75s forwards;
+          animation: btn_line_bottom 0.75s forwards;
+}
+@-webkit-keyframes btn_line_bottom {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: calc(50% - (1px / 2));
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: 30%;
+  }
+}
+@keyframes btn_line_bottom {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: calc(50% - (1px / 2));
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: 30%;
+  }
+}
+.hm_btn.is_opened .btn_line_top {
+  -webkit-animation: opened_btn_line_top 0.75s forwards;
+          animation: opened_btn_line_top 0.75s forwards;
+}
+@-webkit-keyframes opened_btn_line_top {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: 30%;
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: calc(50% - (1px / 2));
+  }
+}
+@keyframes opened_btn_line_top {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: 30%;
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: calc(50% - (1px / 2));
+  }
+}
+.hm_btn.is_opened .btn_line_middle {
+  opacity: 0;
+}
+.hm_btn.is_opened .btn_line_bottom {
+  -webkit-animation: opened_btn_line_bottom 0.75s forwards;
+          animation: opened_btn_line_bottom 0.75s forwards;
+}
+@-webkit-keyframes opened_btn_line_bottom {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: 30%;
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: calc(50% - (1px / 2));
+  }
+}
+@keyframes opened_btn_line_bottom {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: 30%;
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    bottom: calc(50% - (1px / 2));
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    bottom: calc(50% - (1px / 2));
+  }
+}
+
+/* ハンバーガーメニューボタン ここまで*/
+/*----------------------------------------------------------------------------
+* OPTION MODULES
+----------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------
 * ページレイアウト
 ----------------------------------------------------------------------------*/
@@ -17,120 +220,6 @@
   margin-left: auto;
 }
 
-.area_header_content {
-  padding: 1em 0;
-}
-
 /*----------------------------------------------------------------------------
-* グローバルメニュー
+* ハンバーガーメニュー
 ----------------------------------------------------------------------------*/
-/*--------------------------------------
-* module variables
---------------------------------------*/
-/*--------------------------------------
-* modules
---------------------------------------*/
-/*
-* @see plugin/css/modules/_gm_accordion.scss */
-.gm_area .gm_inner {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  background-color: #fff;
-}
-
-/*
-* @see plugin/css/modules/_gm_nav.scss */
-.gm_area .gm_nav > .gm_nav_item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-.gm_area .gm_nav > .gm_nav_item > .gm_item_name {
-  text-align: center;
-  padding: 1.5em 0;
-}
-.gm_area .gm_nav > .gm_nav_item:not(:last-child) {
-  border-right: 1px dotted #000;
-}
-
-/*
-* @see plugin/css/modules/_gm_accordion.scss */
-.gm_area .gm_nav .gm_accordion .gm_accordion_body {
-  background-color: #ccc;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-}
-.gm_area .gm_nav .gm_accordion .gm_accordion_body li a {
-  padding: 10px;
-  background-color: #ccc;
-}
-.gm_area .gm_nav .gm_accordion .gm_accordion_body li a:hover {
-  background-color: #eee;
-}
-.gm_area .gm_nav .gm_accordion .gm_accordion_body li:not(:last-child) a {
-  border-bottom: 1px dotted #000;
-}
-
-/*
-* @see plugin/css/modules/_gm_mega.scss */
-.gm_area .gm_mega .gm_mega_body {
-  background-color: #ccc;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  padding: 1em 0;
-}
-
-/*
-* @see plugin/css/modules/_gm_position_fix.scss */
-.gm_area {
-  height: 68.39px;
-}
-.gm_area .gm_inner.is_fixed {
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  -webkit-animation: gm_slide_in 0.2s;
-          animation: gm_slide_in 0.2s;
-}
-.gm_area .gm_inner.is_fixed .gm_nav .gm_nav_item .gm_item_name {
-  padding: 1em 0;
-}
-.gm_area .gm_inner.is_view_out {
-  -webkit-animation: gm_slide_out 0.2s forwards;
-          animation: gm_slide_out 0.2s forwards;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-@-webkit-keyframes gm_slide_in {
-  0% {
-    margin-top: -52.39px;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
-
-@keyframes gm_slide_in {
-  0% {
-    margin-top: -52.39px;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
-@-webkit-keyframes gm_slide_out {
-  0% {
-    margin-top: 0;
-  }
-  100% {
-    margin-top: -52.39px;
-  }
-}
-@keyframes gm_slide_out {
-  0% {
-    margin-top: 0;
-  }
-  100% {
-    margin-top: -52.39px;
-  }
-}
