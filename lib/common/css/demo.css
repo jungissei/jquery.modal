@@ -199,12 +199,6 @@
 }
 
 /* ハンバーガーメニューボタン ここまで*/
-/*----------------------------------------------------------------------------
-* OPTION MODULES
-----------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------
-* ページレイアウト
-----------------------------------------------------------------------------*/
 #wrapper {
   height: 3000px;
 }
@@ -220,6 +214,25 @@
   margin-left: auto;
 }
 
-/*----------------------------------------------------------------------------
-* ハンバーガーメニュー
-----------------------------------------------------------------------------*/
+.hm_canvas .canvas_off {
+  background-color: rgba(51, 51, 51, 0.7);
+}
+.hm_canvas .canvas_body {
+  padding: 1em 0;
+  width: 80%;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+#hamburger_menu_canvas .body_menu .menu_animation_item {
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  opacity: 0;
+}
+#hamburger_menu_canvas.is_opened .body_menu ul li {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
