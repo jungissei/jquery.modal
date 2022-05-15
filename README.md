@@ -1,10 +1,6 @@
 # jquery.hamburger_menu
 
-ハンバーガーメニューのjQueryプラグインです。
+ハンバーガーメニューの自作jQueryプラグインです。
 
 ## DEMO
-
-
-## OPTION
-
-
+- [通常版](https://jungissei.github.io/jquery.hamburger_menu/demo/index.html)
