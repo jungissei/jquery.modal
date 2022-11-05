@@ -313,7 +313,7 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation fade in
   //--------------------------------------
-  &[data-hamburger_menu_menu_in="fade_in"] {
+  &[data-hamburger-menu-in="fade_in"] {
     .canvas_body {
       left: 0;
       opacity: 0;
@@ -337,7 +337,7 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation slide in from top
   //--------------------------------------
-  &[data-hamburger_menu_menu_in="slide_from_top"] {
+  &[data-hamburger-menu-in="slide_from_top"] {
     .canvas_body {
       left: 0;
       transform: translateY(-100%);
@@ -359,7 +359,7 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation slide in from left
   //--------------------------------------
-  &[data-hamburger_menu_menu_in="slide_from_left"] {
+  &[data-hamburger-menu-in="slide_from_left"] {
     .canvas_body {
       left: 0;
       transform: translateX(-100%);
@@ -381,7 +381,7 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation slide in from right
   //--------------------------------------
-  &[data-hamburger_menu_menu_in="slide_from_right"] {
+  &[data-hamburger-menu-in="slide_from_right"] {
     .canvas_body {
       right: 0;
       transform: translateX(100%);
