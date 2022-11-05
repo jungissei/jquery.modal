@@ -1,14 +1,28 @@
+@use "sass:math";
+
 // ----------------------------------------------------------------------------
-// OPTION MODULES
-// ----------------------------------------------------------------------------*/
-@use "./modules/hm_btn";
+// Table of contents
+//
+// Page layouts
+// jqueryHamburgerMenu.js
+// ----------------------------------------------------------------------------
 
 
 // ----------------------------------------------------------------------------
-// ページレイアウト
+// Page layouts
 // ----------------------------------------------------------------------------*/
-#wrapper{
-  height: 3000px;
+body{
+  background-color: #ecd6c7;
+}
+
+img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+main{
+  padding: 100px 0;
 }
 
 .container{
@@ -23,58 +37,422 @@
   }
 }
 
+.page_layout1 {
 
+  &:not(:last-child){
+    margin-bottom: 55px;
+  }
+
+  .layout_inner {
+
+    .layout_content {
+      max-width: 1180px;
+      margin-right: auto;
+      margin-left: auto;
+
+      .layout_width {
+        max-width: calc(100% - 30px);
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+
+@media screen and ( min-width:768px) {
+  .content_row {
+    display: flex;
+    justify-content: space-between;
+
+    &.row_revers{
+      flex-direction: row-reverse;
+    }
+
+    .col {
+      width: calc(50% - 15px);
+    }
+  }
+}
+@media screen and ( max-width:767px) {
+  .content_row {
+    .col {
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+h1{
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 80px;
+}
+
+h2{
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+  padding-left: 5px;
+}
+
+.txt{
+  font-size: 16px;
+
+  p{
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+}
 
 // ----------------------------------------------------------------------------
-// MODULES
-//----------------------------------------------------------------------------*/
-//--------------------------------------
-// variables
-//--------------------------------------
+// jqueryHamburgerMenu.js
+// ----------------------------------------------------------------------------
 
+//--------------------------------------
+// button
+//--------------------------------------
+// Button size related
+$btn_with: 50px;
+$btn_height: 50px;
+
+// Button line related
+$btn_line_width: 60%;
+$btn_line_height: 1px;
+
+// Button color related
+$btn_color: #716e77;
+$btn_line_color: #ffffff;
+
+.hamburger_menu_btn {
+  background-color: $btn_color;
+  width: $btn_with;
+  padding: math.div($btn_height, 2) 0;
+  display: block;
+  cursor: pointer;
+  position: relative;
+
+  .btn_ttl{
+    display: none;
+  }
+
+  span[class^="btn_line"]{
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $btn_line_color;
+    width: $btn_line_width;
+    height: $btn_line_height;
+  }
+
+  .btn_line_top {
+    top: 30%;
+  }
+
+  .btn_line_center {
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .btn_line_bottom {
+    bottom: 30%;
+  }
+
+
+  //--------------------------------------
+  // Animation when closed
+  //--------------------------------------
+  .btn_line_top {
+    animation: btn_line_top 0.75s forwards;
+    @keyframes btn_line_top {
+      0% {
+        transform: rotate(45deg);
+        top: calc(50% - (#{$btn_line_height} / 2));
+      }
+      50% {
+        transform: rotate(0);
+        top: calc(50% - (#{$btn_line_height} / 2));
+      }
+      100% {
+        transform: rotate(0);
+        top: 30%;
+      }
+    }
+  }
+
+  .menu_btn_middle {
+    transition: all 0.25s 0.25s;
+    opacity: 1;
+  }
+
+  .btn_line_bottom {
+    animation: btn_line_bottom 0.75s forwards;
+    @keyframes btn_line_bottom {
+      0% {
+        transform: rotate(-45deg);
+        bottom: calc(50% - (#{$btn_line_height} / 2));
+      }
+      50% {
+        transform: rotate(0);
+        bottom: calc(50% - (#{$btn_line_height} / 2));
+      }
+      100% {
+        transform: rotate(0);
+        bottom: 30%;
+      }
+    }
+  }
+
+  //--------------------------------------
+  // Animation when menu opened
+  //--------------------------------------
+  &.is_opened {
+    .btn_line_top {
+      animation: opened_btn_line_top 0.75s forwards;
+      @keyframes opened_btn_line_top {
+        0% {
+          transform: rotate(0);
+          top: 30%;
+        }
+        50% {
+          transform: rotate(0);
+          top: calc(50% - (#{$btn_line_height} / 2));
+        }
+        100% {
+          transform: rotate(45deg);
+          top: calc(50% - (#{$btn_line_height} / 2));
+        }
+      }
+    }
+
+    .btn_line_center {
+      opacity: 0;
+    }
+
+    .btn_line_bottom {
+      animation: opened_btn_line_bottom 0.75s forwards;
+      @keyframes opened_btn_line_bottom {
+        0% {
+          transform: rotate(0);
+          bottom: 30%;
+        }
+        50% {
+          transform: rotate(0);
+          bottom: calc(50% - (#{$btn_line_height} / 2));
+        }
+        100% {
+          transform: rotate(-45deg);
+          bottom: calc(50% - (#{$btn_line_height} / 2));
+        }
+      }
+    }
+  }
+}
+
+
+//--------------------------------------
+// canvas
+//--------------------------------------
+// Canvas size related
 $canvas_width: 80%;
 $canvas_height: 100vh;
+
+// Canvas color related
 $canvas_bg: #ccc;
 $menu_off_canvas_color: rgba(#333, 0.7);
 
-//--------------------------------------
-// @see lib/plugin/css/modules/_hm_canvas.scss
-//--------------------------------------
-#hm_canvas {
+#hamburger_menu_canvas {
 
-  // canvas off
+  //--------------------------------------
+  // Canvas off
   //--------------------------------------
   .canvas_off {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
     background-color: $menu_off_canvas_color;
   }
+  &.is_opened {
+    .canvas_off {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
-  // canvas body
+
+  //--------------------------------------
+  // Canvas body
   //--------------------------------------
   .canvas_body {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    overflow-y: scroll;
     padding: 1em 0;
     width: $canvas_width;
     height: $canvas_height;
     background-color: $canvas_bg;
   }
 
-}
-
-// ハンバーガーメニュー内
-//--------------------------------------
-#hamburger_menu_canvas {
-  .body_menu {
-    .menu_animation_item {
-      transform: translateX(-200px);
-      transition: all 0.2s;
+  //--------------------------------------
+  // Animation fade in
+  //--------------------------------------
+  &[data-hamburger_menu_menu_in="fade_in"] {
+    .canvas_body {
+      left: 0;
       opacity: 0;
+      visibility: hidden;
+    }
+
+    &.is_preloaded{
+      .canvas_body {
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+    }
+
+    &.is_opened {
+      .canvas_body {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
-  &.is_opened {
-    .body_menu {
-      ul li {
+  //--------------------------------------
+  // Animation slide in from top
+  //--------------------------------------
+  &[data-hamburger_menu_menu_in="slide_from_top"] {
+    .canvas_body {
+      left: 0;
+      transform: translateY(-100%);
+    }
+
+    &.is_preloaded{
+      .canvas_body {
+        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+
+    &.is_opened {
+      .canvas_body {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  //--------------------------------------
+  // Animation slide in from left
+  //--------------------------------------
+  &[data-hamburger_menu_menu_in="slide_from_left"] {
+    .canvas_body {
+      left: 0;
+      transform: translateX(-100%);
+    }
+
+    &.is_preloaded{
+      .canvas_body {
+        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+
+    &.is_opened {
+      .canvas_body {
         transform: translateX(0);
-        opacity: 1;
+      }
+    }
+  }
+
+  //--------------------------------------
+  // Animation slide in from right
+  //--------------------------------------
+  &[data-hamburger_menu_menu_in="slide_from_right"] {
+    .canvas_body {
+      right: 0;
+      transform: translateX(100%);
+    }
+
+    &.is_preloaded{
+      .canvas_body {
+        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+
+    &.is_opened {
+      .canvas_body {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+
+//--------------------------------------
+// Hamburger menu canvas menu
+//--------------------------------------
+#hamburger_menu_canvas {
+
+  .canvas_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .body_nav{
+      width: 300px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+
+      li{
+        &:not(:last-child){
+          margin-bottom: 35px;
+        }
+
+        a{
+          display: inline-block;
+          font-size: 22px;
+          text-align: center;
+          position: relative;
+          padding-bottom: 3px;
+
+          &::after{
+            content: "";
+            display: block;
+            background-color: #000;
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: opacity .2s;
+            opacity: 0;
+          }
+
+          &:hover{
+            &::after{
+              opacity: 1;
+            }
+          }
+
+          .small{
+            font-size: 14px;
+          }
+        }
       }
     }
   }

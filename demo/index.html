@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="./lib/common/css/destyle.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="./lib/plugin/css/jquery.hamburger_menu.css" type="text/css" media="all" />
     <link rel="stylesheet" href="./lib/common/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./lib/pages/css/style.css" type="text/css" media="all" />
     <title>通常版 - jquery.hamburger_menu</title>
   </head>
   <body>
@@ -16,146 +16,138 @@
 
       <header>
 
-        <!--ハンバーガーメニュー ボタン ここから-->
-        <a class="hm_btn exc_smooth_scroll" href="#hm_canvas">
+        <!--jqueryHamburgerMenu.js button ここから-->
+        <button type="button"
+                class="hamburger_menu_btn"
+                data-hamburger-menu-canvas="#hamburger_menu_canvas"
+        ><span class="btn_ttl">メニューを開く</span>
           <span class="btn_line_top"></span>
-          <span class="btn_line_middle"></span>
+          <span class="btn_line_center"></span>
           <span class="btn_line_bottom"></span>
-        </a>
-        <!--ハンバーガーメニュー ボタン ここまで-->
+        </button>
+        <!--jqueryHamburgerMenu.js button ここまで-->
 
       </header>
       <main>
 
-        <div style="height: 1000px"></div>
-        <h2 id="ttl1">見出し1</h2>
-        <div style="height: 1000px"></div>
-        <h2 id="ttl2">見出し2</h2>
-        <div style="height: 1000px"></div>
-        <h2 id="ttl3">見出し3</h2>
-        <div style="height: 1000px"></div>
+        <section class="page_layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
 
-      </main>
-      <footer>
-
-        <!--ハンバーガーメニュー キャンバス ここから-->
-        <div id="hm_canvas" data-hm_menu_in="fade_in">
-
-          <div class="canvas_off"></div>
-
-          <div class="canvas_body">
-            <div class="container">
-              <div class="content_width">
-
-                <ul class="body_menu">
-                  <li class="menu_animation_item"><a href="#ttl1">見出し1</a></li>
-                  <li class="menu_animation_item"><a href="/demo/#ttl2">見出し2(パス付き)</a></li>
-                  <li class="menu_animation_item"><a href="#ttl3">見出し3</a></li>
-                  <li class="menu_animation_item"><a href="https://github.com/jungissei/jungissei.github.io" target="_blank">リポジトリ(外部サイト)</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                  <li class="menu_animation_item"><a href="#">リンクアイテム</a></li>
-                </ul>
+                <h1>This is DEMO jQuery Hamburger Menu</h1>
 
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="content1" class="page_layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+                <h2>Content No.1</h2>
+
+                <div class="content_row">
+                  <div class="col"><img src="./lib/img/dog1.jpg" alt="犬"></div>
+                  <div class="col">
+                    <div class="txt">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="content2" class="page_layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+
+                <h2>Content No.2</h2>
+
+                <div class="content_row row_revers">
+                  <div class="col"><img src="./lib/img/dog2.jpg" alt="犬"></div>
+                  <div class="col">
+                    <div class="txt">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="content3" class="page_layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+                <h2>Content No.3</h2>
+
+                <div class="content_row">
+                  <div class="col"><img src="./lib/img/dog3.jpg" alt="犬"></div>
+                  <div class="col">
+                    <div class="txt">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <footer>
+
+        <!--jqueryHamburgerMenu.js canvas ここから-->
+        <div id="hamburger_menu_canvas" data-hamburger_menu_menu_in="fade_in">
+
+          <div class="canvas_off"></div>
+
+          <div class="canvas_body">
+
+
+            <div class="page_layout1">
+              <div class="layout_inner">
+                <div class="layout_content">
+                  <div class="layout_width">
+
+                    <ul class="body_nav">
+                      <li><a href="#content1">Content No.1</a></li>
+                      <li><a href="#content2">Content No.2</a></li>
+                      <li><a href="/demo/#content3">Content No.3<br><span class="small">(パス付きリンク)</span></a></li>
+                      <li><a href="https://github.com/jungissei/jungissei.github.io" target="_blank">GitHub Repository<br><span class="small">(外部サイトへ)</span></a></li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <!--ハンバーガーメニュー キャンバス ここまで-->
+        <!--jqueryHamburgerMenu.js canvas ここまで-->
 
       </footer>
 
 
     </div>
 
-    <script src="./lib/common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/common/js/jquery.min.js"></script>
 
-    <script src="./lib/common/js/body-scroll-lock/bodyScrollLock.min.js"></script>
-    <script src="./lib/common/js/jquery-smooth-scroll/jquery-smooth-scroll.min.js"></script>
-    <script src="./lib/plugin/js/jquery.hamburger_menu.js"></script>
+    <script type="text/javascript" src="./lib/common/js/bodyScrollLock.min.js"></script>
+    <script type="text/javascript" src="./lib/common/js/jqueryHamburgerMenu.js"></script>
+    <script type="text/javascript" src="./lib/common/js/jquery-smooth-scroll.min.js"></script>
 
-    <script src="./lib/common/js/common.min.js"></script>
-    <script type="text/javascript" src="./lib/pages/index/js/scripts.js"></script>
+    <script type="text/javascript" src="./lib/pages/js/scripts.js"></script>
   </body>
 </html>
