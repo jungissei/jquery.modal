@@ -1,119 +1,5 @@
 @use "sass:math";
 
-// ----------------------------------------------------------------------------
-// Table of contents
-//
-// Page layouts
-// jqueryHamburgerMenu.js
-// ----------------------------------------------------------------------------
-
-
-// ----------------------------------------------------------------------------
-// Page layouts
-// ----------------------------------------------------------------------------*/
-body{
-  background-color: #ecd6c7;
-}
-
-img{
-  max-width: 100%;
-  width: auto;
-  height: auto;
-}
-
-main{
-  padding: 100px 0;
-}
-
-.container{
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-
-  .content_width{
-    width: calc(100% - 40px);
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-.page_layout1 {
-
-  &:not(:last-child){
-    margin-bottom: 55px;
-  }
-
-  .layout_inner {
-
-    .layout_content {
-      max-width: 1180px;
-      margin-right: auto;
-      margin-left: auto;
-
-      .layout_width {
-        max-width: calc(100% - 30px);
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
-  }
-}
-
-
-@media screen and ( min-width:768px) {
-  .content_row {
-    display: flex;
-    justify-content: space-between;
-
-    &.row_revers{
-      flex-direction: row-reverse;
-    }
-
-    .col {
-      width: calc(50% - 15px);
-    }
-  }
-}
-@media screen and ( max-width:767px) {
-  .content_row {
-    .col {
-      &:not(:last-child){
-        margin-bottom: 15px;
-      }
-    }
-  }
-}
-
-h1{
-  font-size: 36px;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 80px;
-}
-
-h2{
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 3px;
-  padding-left: 5px;
-}
-
-.txt{
-  font-size: 16px;
-
-  p{
-    &:not(:last-child){
-      margin-bottom: 15px;
-    }
-  }
-}
-
-// ----------------------------------------------------------------------------
-// jqueryHamburgerMenu.js
-// ----------------------------------------------------------------------------
-
 //--------------------------------------
 // button
 //--------------------------------------
@@ -136,6 +22,21 @@ $btn_line_color: #ffffff;
   display: block;
   cursor: pointer;
   position: relative;
+
+
+  &.is_fixed{
+    position: fixed;
+    top: 20px;
+    z-index: 4;
+
+    @media screen and ( min-width:768px) {
+      $page_width : 1180px;
+      left: calc(50% + math.div($page_width, 2) - 15px - $btn_with);
+    }
+    @media screen and ( max-width:767px) {
+      right: 20px;
+    }
+  }
 
   .btn_ttl{
     display: none;
@@ -265,31 +166,60 @@ $btn_line_color: #ffffff;
 //--------------------------------------
 // Canvas size related
 $canvas_width: 80%;
+$canvas_max_width: 600px;
 $canvas_height: 100vh;
 
 // Canvas color related
 $canvas_bg: #ccc;
-$menu_off_canvas_color: rgba(#333, 0.7);
+$menu_off_canvas_color: rgba(#000, 0.7);
 
 #hamburger_menu_canvas {
 
-  //--------------------------------------
-  // Canvas off
-  //--------------------------------------
-  .canvas_off {
+  .layout_inner{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 5;
     width: 100%;
     height: 100%;
     opacity: 0;
     visibility: hidden;
     cursor: pointer;
     background-color: $menu_off_canvas_color;
+
+    .layout_content{
+      position: absolute;
+      top: 0;
+      background-color: $canvas_bg;
+      max-width: $canvas_max_width;
+      width: $canvas_width;
+      height: $canvas_height;
+      cursor: default;
+
+      .layout_width{
+        padding: 30px;
+      }
+    }
+  }
+
+  &.is_scrollable{
+    .layout_inner{
+      .layout_content{
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  //--------------------------------------
+  // Animation fade in
+  //--------------------------------------
+  &.is_preloaded{
+    .layout_inner{
+      transition: opacity 0.2s, visibility 0.2s;
+    }
   }
   &.is_opened {
-    .canvas_off {
+    .layout_inner{
       opacity: 1;
       visibility: visible;
     }
@@ -297,39 +227,31 @@ $menu_off_canvas_color: rgba(#333, 0.7);
 
 
   //--------------------------------------
-  // Canvas body
-  //--------------------------------------
-  .canvas_body {
-    position: fixed;
-    top: 0;
-    z-index: 3;
-    overflow-y: scroll;
-    padding: 1em 0;
-    width: $canvas_width;
-    height: $canvas_height;
-    background-color: $canvas_bg;
-  }
-
-  //--------------------------------------
   // Animation fade in
   //--------------------------------------
-  &[data-hamburger-menu-in="fade_in"] {
-    .canvas_body {
+  &[data-modal-canvas-in="fade_in"] {
+    .layout_content {
       left: 0;
       opacity: 0;
       visibility: hidden;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: calc(100vh - 60px);
     }
 
     &.is_preloaded{
-      .canvas_body {
-        transition: opacity 0.3s, visibility 0.3s;
+      .layout_content {
+        transition: opacity 0.2s, visibility 0.2s;
       }
     }
 
     &.is_opened {
-      .canvas_body {
+      .layout_content {
         opacity: 1;
         visibility: visible;
+        transition-delay: 0.3s;
       }
     }
   }
@@ -337,21 +259,26 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation slide in from top
   //--------------------------------------
-  &[data-hamburger-menu-in="slide_from_top"] {
-    .canvas_body {
-      left: 0;
+  &[data-modal-canvas-in="slide_from_top"] {
+    .layout_content {
       transform: translateY(-100%);
+      height: calc(100vh - 60px);
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     &.is_preloaded{
-      .canvas_body {
+      .layout_content {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .canvas_body {
-        transform: translateY(0);
+      .layout_content {
+        transform: translateY(30px);
+        transition-delay: 0.3s;
       }
     }
   }
@@ -359,100 +286,70 @@ $menu_off_canvas_color: rgba(#333, 0.7);
   //--------------------------------------
   // Animation slide in from left
   //--------------------------------------
-  &[data-hamburger-menu-in="slide_from_left"] {
-    .canvas_body {
+  &[data-modal-canvas-in="slide_from_left"] {
+    .layout_content {
       left: 0;
       transform: translateX(-100%);
+
+      .layout_width{
+        padding: 30px;
+      }
     }
 
     &.is_preloaded{
-      .canvas_body {
+      .layout_content {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .canvas_body {
+      .layout_content {
         transform: translateX(0);
+        transition-delay: 0.3s;
       }
     }
   }
 
+
+
   //--------------------------------------
   // Animation slide in from right
   //--------------------------------------
-  &[data-hamburger-menu-in="slide_from_right"] {
-    .canvas_body {
+  &[data-modal-canvas-in="slide_from_right"] {
+    .layout_content {
       right: 0;
       transform: translateX(100%);
     }
 
     &.is_preloaded{
-      .canvas_body {
+      .layout_content {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .canvas_body {
+      .layout_content {
         transform: translateX(0);
+        transition-delay: 0.3s;
       }
     }
   }
-}
 
 
-//--------------------------------------
-// Hamburger menu canvas menu
-//--------------------------------------
-#hamburger_menu_canvas {
+  //--------------------------------------
+  // Close Button
+  //--------------------------------------
+  .hamburger_menu_btn{
 
-  .canvas_body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &.btn_close{
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: transparent;
 
-    .body_nav{
-      width: 300px;
-      margin-right: auto;
-      margin-left: auto;
-      text-align: center;
-
-      li{
-        &:not(:last-child){
-          margin-bottom: 35px;
-        }
-
-        a{
-          display: inline-block;
-          font-size: 22px;
-          text-align: center;
-          position: relative;
-          padding-bottom: 3px;
-
-          &::after{
-            content: "";
-            display: block;
-            background-color: #000;
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            transition: opacity .2s;
-            opacity: 0;
-          }
-
-          &:hover{
-            &::after{
-              opacity: 1;
-            }
-          }
-
-          .small{
-            font-size: 14px;
-          }
-        }
+      span[class^="btn_line"]{
+        background-color: #333;
+        height: 2px;
       }
     }
   }
