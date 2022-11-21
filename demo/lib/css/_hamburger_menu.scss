@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "mixin" as *;
 
 //--------------------------------------
 // button
@@ -239,6 +240,11 @@ $menu_off_canvas_color: rgba(#000, 0.7);
       left: 50%;
       transform: translate(-50%, -50%);
       height: calc(100vh - 60px);
+      will-change: transform, opacity, visibility;
+
+      @include only_safari{
+        height: calc(100svh - 60px);
+      }
     }
 
     &.is_preloaded{
@@ -267,6 +273,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
       left: 0;
       margin-right: auto;
       margin-left: auto;
+      will-change: translateY(30px);
     }
 
     &.is_preloaded{
@@ -290,6 +297,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     .layout_content {
       left: 0;
       transform: translateX(-100%);
+      will-change: translateX(0);
 
       .layout_width{
         padding: 30px;
@@ -319,6 +327,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     .layout_content {
       right: 0;
       transform: translateX(100%);
+      will-change: translateX(0);
     }
 
     &.is_preloaded{

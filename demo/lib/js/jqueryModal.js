@@ -135,20 +135,13 @@
       _.$canvas
         .addClass('is_scrollable');
 
-      let canvas_padding_right = parseInt(_.$layout_content.css('padding-right')),
-          layout_content_inner_width = parseInt(_.$layout_content.innerWidth()),
-          layout_content_client_width = parseInt(_.$layout_content.get(0).clientWidth),
-          scroll_bar_width = layout_content_inner_width - layout_content_client_width;
-
-      _.$layout_content.css('padding-right', canvas_padding_right + scroll_bar_width)
     },
     disable : function() {
 
       let _ = this;
 
       _.$canvas
-        .removeClass('is_scrollable')
-        .css('padding-right', '');
+        .removeClass('is_scrollable');
     }
   }
 
