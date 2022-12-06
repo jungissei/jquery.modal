@@ -1,0 +1,48 @@
+#template_header{
+
+  .layout_inner{
+    padding-top: 15px;
+  }
+
+
+  // --------------------------------------
+  // static header
+  // --------------------------------------
+  &.header_static{
+    .hamburger_menu_btn{
+      margin-left: auto;
+    }
+  }
+
+
+  // --------------------------------------
+  // Fix header when scroll down
+  // --------------------------------------
+  &.header_fix{
+
+    .header_content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header_logo{
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .hamburger_menu_btn{
+      margin-left: auto;
+    }
+
+
+    &.is_fixed{
+      .layout_inner{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
