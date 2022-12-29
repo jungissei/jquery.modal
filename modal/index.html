@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="/myjQueryUI/common/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../lib/common/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../lib/pages/modal/css/style.css" type="text/css" media="all" />
+
+    <title>jquery.modal</title>
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <header></header>
+      <main id="main1">
+
+        <section class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+                <h1>jQuery Modal</h1>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="content_list_block" class="page_layout layout1">
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+                <div id="content_dog" class="block_content2" style="opacity:0;"></div>
+
+        </div></div></div></section>
+
+      </main>
+      <footer>
+
+        <!--jqueryModal.js canvas ここから-->
+        <div id="modal_canvas"
+              class="page_layout layout2">
+
+          <div class="layout_inner">
+            <div class="layout_content">
+              <div class="layout_width">
+
+                <div id="dog_content"></div>
+
+                <!--jqueryModal.js button ここから-->
+                <button type="button"
+                        class="modal_btn btn_close is_opened"
+                        data-modal-canvas="#modal_canvas"
+                        data-modal-open-state-class="false"
+                ><span class="btn_ttl">メニューを開く</span>
+                  <span class="btn_line_top"></span>
+                  <span class="btn_line_center"></span>
+                  <span class="btn_line_bottom"></span>
+                </button>
+                <!--jqueryModal.js button ここまで-->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--jqueryModal.js canvas ここまで-->
+
+      </footer>
+
+
+    </div>
+
+
+    <script type="text/javascript" src="/myjQueryUI/common/js/template/nav.js"></script>
+    <script type="text/javascript" src="../lib/common/js/nav.js"></script>
+
+    <script type="text/javascript" src="../lib/common/js/bodyScrollLock.min.js"></script>
+
+    <script type="text/javascript" src="/myjQueryUI/common/js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/myjQueryUI/common/js/template/content_list_block.js"></script>
+    <script type="text/javascript" src="../lib/common/js/jquery.organizeContentsArray.js"></script>
+    <script type="text/javascript" src="../lib/common/js/jqueryModal.js"></script>
+    <script type="text/javascript" src="../lib/common/js/jquery-smooth-scroll.min.js"></script>
+    <script type="text/javascript" src="../lib/common/js/accordion_menu.js"></script>
+
+    <script type="text/javascript" src="../lib/common/js/scripts.js"></script>
+  </body>
+</html>

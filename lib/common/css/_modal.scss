@@ -2,11 +2,11 @@
 @use "mixin" as *;
 
 // ----------------------------------------------------------------------------
-// Hamburger Menu
+// Modal
 // ----------------------------------------------------------------------------
-// --------------------------------------
+//--------------------------------------
 // button
-// --------------------------------------
+//--------------------------------------
 // Button size related
 $btn_with: 50px;
 $btn_height: 50px;
@@ -19,7 +19,7 @@ $btn_line_height: 1px;
 $btn_color: #716e77;
 $btn_line_color: #ffffff;
 
-.hamburger_menu_btn {
+.modal_btn {
   background-color: $btn_color;
   width: $btn_with;
   padding: math.div($btn_height, 2) 0;
@@ -74,9 +74,9 @@ $btn_line_color: #ffffff;
   }
 
 
-  // --------------------------------------
+  //--------------------------------------
   // Animation when closed
-  // --------------------------------------
+  //--------------------------------------
   .btn_line_top {
     animation: btn_line_top 0.75s forwards;
     @keyframes btn_line_top {
@@ -118,9 +118,9 @@ $btn_line_color: #ffffff;
     }
   }
 
-  // --------------------------------------
+  //--------------------------------------
   // Animation when menu opened
-  // --------------------------------------
+  //--------------------------------------
   &.is_opened {
     .btn_line_top {
       animation: opened_btn_line_top 0.75s forwards;
@@ -165,9 +165,9 @@ $btn_line_color: #ffffff;
 }
 
 
-// --------------------------------------
+//--------------------------------------
 // canvas
-// --------------------------------------
+//--------------------------------------
 // Canvas size related
 $canvas_width: 80%;
 $canvas_max_width: 600px;
@@ -177,7 +177,7 @@ $canvas_height: 100vh;
 $canvas_bg: #ccc;
 $menu_off_canvas_color: rgba(#000, 0.7);
 
-#hamburger_menu_canvas {
+#modal_canvas {
 
   .layout_inner{
     position: fixed;
@@ -192,16 +192,14 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     background-color: $menu_off_canvas_color;
 
     .layout_content{
-      position: absolute;
-      top: 0;
       background-color: $canvas_bg;
       max-width: $canvas_max_width;
       width: $canvas_width;
-      height: $canvas_height;
+      max-height: $canvas_height;
       cursor: default;
 
       .layout_width{
-        padding: 30px;
+        padding: 45px 30px;
       }
     }
   }
@@ -214,9 +212,9 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     }
   }
 
-  // --------------------------------------
+  //--------------------------------------
   // Animation fade in
-  // --------------------------------------
+  //--------------------------------------
   &.is_preloaded{
     .layout_inner{
       transition: opacity 0.2s, visibility 0.2s;
@@ -229,129 +227,37 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     }
   }
 
+  .layout_content {
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform, opacity, visibility;
 
-  // --------------------------------------
-  // Animation fade in
-  // --------------------------------------
-  &[data-modal-canvas-in="fade_in"] {
+  }
+
+  &.is_preloaded{
     .layout_content {
-      left: 0;
-      opacity: 0;
-      visibility: hidden;
-
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: calc(100vh - 60px);
-      will-change: transform, opacity, visibility;
-
-      @include only_safari{
-        height: calc(100svh - 60px);
-      }
-    }
-
-    &.is_preloaded{
-      .layout_content {
-        transition: opacity 0.2s, visibility 0.2s;
-      }
-    }
-
-    &.is_opened {
-      .layout_content {
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0.3s;
-      }
+      transition: opacity 0.2s, visibility 0.2s;
     }
   }
 
-  // --------------------------------------
-  // Animation slide in from top
-  // --------------------------------------
-  &[data-modal-canvas-in="slide_from_top"] {
+  &.is_opened {
     .layout_content {
-      transform: translateY(-100%);
-      height: calc(100vh - 60px);
-      right: 0;
-      left: 0;
-      margin-right: auto;
-      margin-left: auto;
-      will-change: translateY(30px);
-    }
-
-    &.is_preloaded{
-      .layout_content {
-        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
-
-    &.is_opened {
-      .layout_content {
-        transform: translateY(30px);
-        transition-delay: 0.3s;
-      }
-    }
-  }
-
-  // --------------------------------------
-  // Animation slide in from left
-  // --------------------------------------
-  &[data-modal-canvas-in="slide_from_left"] {
-    .layout_content {
-      left: 0;
-      transform: translateX(-100%);
-      will-change: translateX(0);
-
-      .layout_width{
-        padding: 30px;
-      }
-    }
-
-    &.is_preloaded{
-      .layout_content {
-        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
-
-    &.is_opened {
-      .layout_content {
-        transform: translateX(0);
-        transition-delay: 0.3s;
-      }
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.3s;
     }
   }
 
 
-
-  // --------------------------------------
-  // Animation slide in from right
-  // --------------------------------------
-  &[data-modal-canvas-in="slide_from_right"] {
-    .layout_content {
-      right: 0;
-      transform: translateX(100%);
-      will-change: translateX(0);
-    }
-
-    &.is_preloaded{
-      .layout_content {
-        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
-
-    &.is_opened {
-      .layout_content {
-        transform: translateX(0);
-        transition-delay: 0.3s;
-      }
-    }
-  }
-
-
-  // --------------------------------------
+  //--------------------------------------
   // Close Button
-  // --------------------------------------
-  .hamburger_menu_btn{
+  //--------------------------------------
+  .modal_btn{
 
     &.btn_close{
       position: absolute;
