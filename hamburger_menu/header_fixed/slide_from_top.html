@@ -5,109 +5,133 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <link rel="stylesheet" href="/jquery.common/css/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="../../lib/common/css/style.css" type="text/css" media="all" />
+    <link
+      rel="stylesheet"
+      href="/jquery.common/css/style.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="../../lib/common/css/style.css"
+      type="text/css"
+      media="all"
+    />
 
     <title>jquery.hamburger_menu</title>
   </head>
   <body>
-
     <div id="wrapper">
-
       <header>
-
         <section id="template_header" class="page_layout layout1 header_fix">
           <div class="layout_inner">
-            <div class="layout_content">
+            <div class="layout_container">
               <div class="layout_width">
-
                 <div class="header_content">
                   <!--jqueryModal.js button ここから-->
-                  <button type="button"
-                          class="hamburger_menu_btn"
-                          data-modal-canvas="#hamburger_menu_canvas"
-                          data-modal-open-state-class="false"
-                  ><span class="btn_ttl">メニューを開く</span>
+                  <button
+                    type="button"
+                    class="hamburger_menu_btn"
+                    data-modal-canvas="#hamburger_menu_canvas"
+                    data-modal-open-state-class="false"
+                  >
+                    <span class="btn_ttl">メニューを開く</span>
                     <span class="btn_line_top"></span>
                     <span class="btn_line_center"></span>
                     <span class="btn_line_bottom"></span>
                   </button>
                   <!--jqueryModal.js button ここまで-->
                 </div>
-
               </div>
             </div>
           </div>
         </section>
-
-
       </header>
-      <main id="main1">
-
+      <main>
         <section class="page_layout layout1">
           <div class="layout_inner">
-            <div class="layout_content">
+            <div class="layout_container">
               <div class="layout_width">
-
-                <h1>Slide From Top<br>jQuery Hamburger Menu</h1>
-
+                <h1>Slide From Top<br />jQuery Hamburger Menu</h1>
               </div>
             </div>
           </div>
         </section>
 
+        <div id="content_block"></div>
       </main>
       <footer>
-
         <!--jqueryModal.js canvas ここから-->
-        <div id="hamburger_menu_canvas"
-              class="page_layout layout2"
-              data-modal-canvas-in="slide_from_top">
-
+        <div
+          id="hamburger_menu_canvas"
+          class="page_layout layout2"
+          data-modal-canvas-in="slide_from_top"
+        >
           <div class="layout_inner">
-            <div class="layout_content">
+            <div class="layout_container">
               <div class="layout_width">
-
-
                 <nav id="nav_hamburger_menu" class="canvas_nav"></nav>
 
                 <!--jqueryModal.js button ここから-->
-                <button type="button"
-                        class="hamburger_menu_btn btn_close is_opened"
-                        data-modal-canvas="#hamburger_menu_canvas"
-                        data-modal-open-state-class="false"
-                ><span class="btn_ttl">メニューを開く</span>
+                <button
+                  type="button"
+                  class="hamburger_menu_btn btn_close is_opened"
+                  data-modal-canvas="#hamburger_menu_canvas"
+                  data-modal-open-state-class="false"
+                >
+                  <span class="btn_ttl">メニューを開く</span>
                   <span class="btn_line_top"></span>
                   <span class="btn_line_center"></span>
                   <span class="btn_line_bottom"></span>
                 </button>
                 <!--jqueryModal.js button ここまで-->
-
-
               </div>
             </div>
           </div>
-
         </div>
         <!--jqueryModal.js canvas ここまで-->
-
       </footer>
-
-
     </div>
 
-    <script type="text/javascript" src="/jquery.common/js/template/main1.js"></script>
-    <script type="text/javascript" src="/jquery.common/js/template/nav.js"></script>
+    <script
+      type="text/javascript"
+      src="/jquery.common/js/template/content_block.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/jquery.common/js/template/nav.js"
+    ></script>
     <script type="text/javascript" src="../../lib/common/js/nav.js"></script>
 
-    <script type="text/javascript" src="../../lib/common/js/bodyScrollLock.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/bodyScrollLock.min.js"
+    ></script>
 
-    <script type="text/javascript" src="/jquery.common/js/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="../../lib/common/js/jquery.organizeContentsArray.js"></script>
-    <script type="text/javascript" src="../../lib/common/js/jqueryModal.js"></script>
-    <script type="text/javascript" src="../../lib/common/js/jquery-smooth-scroll.min.js"></script>
-    <script type="text/javascript" src="../../lib/common/js/accordion_menu.js"></script>
+    <script
+      type="text/javascript"
+      src="/jquery.common/js/jquery-latest.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/jquery.organizeContentsArray.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/jqueryModal.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/jquery-smooth-scroll.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/accordion_menu.js"
+    ></script>
 
-    <script type="text/javascript" src="../../lib/common/js/scripts.js"></script>
+    <script
+      type="text/javascript"
+      src="../../lib/common/js/scripts.js"
+    ></script>
   </body>
 </html>

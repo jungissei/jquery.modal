@@ -20,12 +20,12 @@ $btn_color: #716e77;
 $btn_line_color: #ffffff;
 
 .hamburger_menu_btn {
+  display: block;
+  position: relative;
   background-color: $btn_color;
   width: $btn_with;
   padding: math.div($btn_height, 2) 0;
-  display: block;
   cursor: pointer;
-  position: relative;
 
 
   &.is_fixed{
@@ -81,16 +81,16 @@ $btn_line_color: #ffffff;
     animation: btn_line_top 0.75s forwards;
     @keyframes btn_line_top {
       0% {
-        transform: rotate(45deg);
         top: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(45deg);
       }
       50% {
-        transform: rotate(0);
         top: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(0);
       }
       100% {
-        transform: rotate(0);
         top: 30%;
+        transform: rotate(0);
       }
     }
   }
@@ -104,16 +104,16 @@ $btn_line_color: #ffffff;
     animation: btn_line_bottom 0.75s forwards;
     @keyframes btn_line_bottom {
       0% {
-        transform: rotate(-45deg);
         bottom: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(-45deg);
       }
       50% {
-        transform: rotate(0);
         bottom: calc(50% - (#{$btn_line_height} / 2));
+        transform: rotate(0);
       }
       100% {
-        transform: rotate(0);
         bottom: 30%;
+        transform: rotate(0);
       }
     }
   }
@@ -126,16 +126,16 @@ $btn_line_color: #ffffff;
       animation: opened_btn_line_top 0.75s forwards;
       @keyframes opened_btn_line_top {
         0% {
-          transform: rotate(0);
           top: 30%;
+          transform: rotate(0);
         }
         50% {
-          transform: rotate(0);
           top: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(0);
         }
         100% {
-          transform: rotate(45deg);
           top: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(45deg);
         }
       }
     }
@@ -148,16 +148,16 @@ $btn_line_color: #ffffff;
       animation: opened_btn_line_bottom 0.75s forwards;
       @keyframes opened_btn_line_bottom {
         0% {
-          transform: rotate(0);
           bottom: 30%;
+          transform: rotate(0);
         }
         50% {
-          transform: rotate(0);
           bottom: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(0);
         }
         100% {
-          transform: rotate(-45deg);
           bottom: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(-45deg);
         }
       }
     }
@@ -191,7 +191,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     cursor: pointer;
     background-color: $menu_off_canvas_color;
 
-    .layout_content{
+    .layout_container{
       position: absolute;
       top: 0;
       background-color: $canvas_bg;
@@ -208,7 +208,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
 
   &.is_scrollable{
     .layout_inner{
-      .layout_content{
+      .layout_container{
         overflow-y: scroll;
       }
     }
@@ -234,13 +234,13 @@ $menu_off_canvas_color: rgba(#000, 0.7);
   // Animation fade in
   // --------------------------------------
   &[data-modal-canvas-in="fade_in"] {
-    .layout_content {
-      left: 0;
-      opacity: 0;
-      visibility: hidden;
+    .layout_container {
 
       top: 50%;
+      left: 0;
       left: 50%;
+      opacity: 0;
+      visibility: hidden;
       transform: translate(-50%, -50%);
       height: calc(100vh - 60px);
       will-change: transform, opacity, visibility;
@@ -251,13 +251,13 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     }
 
     &.is_preloaded{
-      .layout_content {
+      .layout_container {
         transition: opacity 0.2s, visibility 0.2s;
       }
     }
 
     &.is_opened {
-      .layout_content {
+      .layout_container {
         opacity: 1;
         visibility: visible;
         transition-delay: 0.3s;
@@ -269,24 +269,24 @@ $menu_off_canvas_color: rgba(#000, 0.7);
   // Animation slide in from top
   // --------------------------------------
   &[data-modal-canvas-in="slide_from_top"] {
-    .layout_content {
-      transform: translateY(-100%);
-      height: calc(100vh - 60px);
+    .layout_container {
       right: 0;
       left: 0;
+      transform: translateY(-100%);
+      height: calc(100vh - 60px);
       margin-right: auto;
       margin-left: auto;
       will-change: translateY(30px);
     }
 
     &.is_preloaded{
-      .layout_content {
+      .layout_container {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .layout_content {
+      .layout_container {
         transform: translateY(30px);
         transition-delay: 0.3s;
       }
@@ -297,7 +297,7 @@ $menu_off_canvas_color: rgba(#000, 0.7);
   // Animation slide in from left
   // --------------------------------------
   &[data-modal-canvas-in="slide_from_left"] {
-    .layout_content {
+    .layout_container {
       left: 0;
       transform: translateX(-100%);
       will-change: translateX(0);
@@ -308,13 +308,13 @@ $menu_off_canvas_color: rgba(#000, 0.7);
     }
 
     &.is_preloaded{
-      .layout_content {
+      .layout_container {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .layout_content {
+      .layout_container {
         transform: translateX(0);
         transition-delay: 0.3s;
       }
@@ -327,20 +327,20 @@ $menu_off_canvas_color: rgba(#000, 0.7);
   // Animation slide in from right
   // --------------------------------------
   &[data-modal-canvas-in="slide_from_right"] {
-    .layout_content {
+    .layout_container {
       right: 0;
       transform: translateX(100%);
       will-change: translateX(0);
     }
 
     &.is_preloaded{
-      .layout_content {
+      .layout_container {
         transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
 
     &.is_opened {
-      .layout_content {
+      .layout_container {
         transform: translateX(0);
         transition-delay: 0.3s;
       }
