@@ -1,10 +1,5 @@
 #template_header{
 
-  .layout_inner{
-    padding-top: 15px;
-  }
-
-
   // --------------------------------------
   // static header
   // --------------------------------------
@@ -19,6 +14,7 @@
   // Fix header when scroll down
   // --------------------------------------
   &.header_fix{
+    background-color: #ecd6c7;
 
     .header_content{
       display: flex;
@@ -26,9 +22,8 @@
       justify-content: space-between;
     }
 
-    .header_logo{
-      font-size: 25px;
-      font-weight: bold;
+    .header_ttl{
+      font-size: 14px;
     }
 
     .hamburger_menu_btn{
