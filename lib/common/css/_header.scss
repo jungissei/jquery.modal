@@ -14,7 +14,6 @@
   // Fix header when scroll down
   // --------------------------------------
   &.header_fix{
-    background-color: #ecd6c7;
 
     .header_content{
       display: flex;
@@ -37,6 +36,9 @@
         top: 0;
         left: 0;
         width: 100%;
+        background-color: #ecd6c7;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
     }
   }

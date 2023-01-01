@@ -31,15 +31,8 @@ $btn_line_color: #ffffff;
   &.is_fixed{
     position: fixed;
     top: 20px;
+    right: 20px;
     z-index: 4;
-
-    @media screen and ( min-width:768px) {
-      $page_width : 1180px;
-      left: calc(50% + math.div($page_width, 2) - 15px - $btn_with);
-    }
-    @media screen and ( max-width:767px) {
-      right: 20px;
-    }
   }
 
   .btn_ttl{
