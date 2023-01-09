@@ -23,38 +23,33 @@
   <body>
     <div id="wrapper">
       <header>
-        <section id="template_header" class="page_layout layout1 header_static">
+        <div id="template_ttl" class="page_layout layout1">
           <div class="layout_inner">
             <div class="layout_container">
               <div class="layout_width">
-                <div class="header_content">
-                  <h1 class="header_ttl">
-                    Slide From Left<br />jQuery Hamburger Menu
-                  </h1>
-
-                  <!--jqueryModal.js button ここから-->
-                  <button
-                    type="button"
-                    class="hamburger_menu_btn is_fixed"
-                    data-modal-canvas="#hamburger_menu_canvas"
-                    data-modal-open-state-class="false"
-                  >
-                    <span class="btn_ttl">メニューを開く</span>
-                    <span class="btn_line_top"></span>
-                    <span class="btn_line_center"></span>
-                    <span class="btn_line_bottom"></span>
-                  </button>
-                  <!--jqueryModal.js button ここまで-->
-                </div>
+                <h1 class="ttl_page">Slide From Left jQuery Hamburger Menu</h1>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </header>
       <main>
         <div id="content_block"></div>
       </main>
       <footer>
+        <!--jqueryModal.js button ここから-->
+        <button
+          type="button"
+          class="hamburger_menu_btn is_fixed"
+          data-modal-canvas="#hamburger_menu_canvas"
+          data-modal-open-state-class="false"
+        >
+          <span class="btn_ttl">メニューを開く</span>
+          <span class="btn_line_top"></span>
+          <span class="btn_line_center"></span>
+          <span class="btn_line_bottom"></span>
+        </button>
+        <!--jqueryModal.js button ここまで-->
         <!--jqueryModal.js canvas ここから-->
         <div
           id="hamburger_menu_canvas"
