@@ -45,13 +45,14 @@
                 <div class="header_content">
                   <p class="header_logo">LOGO</p>
 
-                  <nav role="navigation">
+                  <nav id="hamburger_menu" role="navigation">
                     <!--jqueryModal.js button ここから-->
                     <button
                       type="button"
                       class="hamburger_menu_btn"
                       data-modal-canvas="#hamburger_menu_canvas"
                       data-modal-open-state-class="false"
+                      data-focus-trap-last="#hamburger_menu_canvas a, #hamburger_menu_canvas button"
                       aria-controls="hamburger_menu_canvas"
                       aria-expanded="false"
                       aria-haspopup="true"
@@ -92,7 +93,7 @@
                             </button>
                             <!--jqueryModal.js button ここまで-->
                             <div
-                              data-focus-trap="#hamburger_menu_canvas a, #hamburger_menu_canvas button"
+                              data-focus-trap-first="#hamburger_menu_canvas a, #hamburger_menu_canvas button"
                               tabindex="0"
                             ></div>
                           </div>
