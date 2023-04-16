@@ -1,3 +1,9 @@
 
-@use "header";
-@use "modal";
+@use "header" as *;
+
+
+@use "./pc/content" as *;
+@use "./pc/modal" as *;
+
+@use "./sp/content" as *;
+@use "./sp/modal" as *;

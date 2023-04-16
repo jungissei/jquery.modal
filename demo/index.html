@@ -26,7 +26,7 @@
 
     <title>jQuery Modal</title>
   </head>
-  <body>
+  <body style="height: 300vh">
     <div id="wrapper">
       <header>
         <div id="template_ttl" class="page_layout layout1">
@@ -44,60 +44,153 @@
           <div class="layout_inner">
             <div class="layout_container">
               <div class="layout_width">
-                <div
-                  id="content_dog"
-                  class="block_content2"
-                  style="opacity: 0"
-                ></div>
+                <div class="content_items">
+                  <div class="content_item">
+                    <!-- Card Start -->
+                    <div class="item_card">
+                      <div class="card_thumb">
+                        <img
+                          src="/jquery.common/img/dog1.jpg"
+                          alt="Snow"
+                          width="640"
+                          height="426"
+                          decoding="async"
+                          loading="lazy"
+                        />
+                      </div>
+                      <button class="card_ttl" data-modal-open="modal_dog">
+                        Snow
+                      </button>
+                    </div>
+                    <!-- Card End -->
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
       <footer>
-        <!--jqueryModal.js canvas ここから-->
-        <div id="modal_canvas" class="page_layout layout2">
+        <!-- Modal Start -->
+        <div
+          id="modal_dog"
+          class="area_modal page_layout layout1"
+          aria-hidden="true"
+        >
           <div class="layout_inner">
             <div class="layout_container">
               <div class="layout_width">
-                <div id="dog_content"></div>
-
-                <!--jqueryModal.js button ここから-->
-                <button
-                  type="button"
-                  class="modal_btn btn_close is_opened"
-                  data-modal-canvas="#modal_canvas"
-                  data-modal-open-state-class="false"
+                <div
+                  id="modal_block_dog1"
+                  class="modal_block"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="modal_ttl_dog1"
                 >
-                  <span class="btn_ttl">メニューを開く</span>
-                  <span class="btn_line_top"></span>
-                  <span class="btn_line_center"></span>
-                  <span class="btn_line_bottom"></span>
-                </button>
-                <!--jqueryModal.js button ここまで-->
+                  <div class="block_thumb">
+                    <img
+                      src="/jquery.common/img/dog1.jpg"
+                      alt="Snow"
+                      width="640"
+                      height="426"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h2 id="modal_ttl_dog1" class="block_ttl">Snow</h2>
+                  <p class="block_txt">
+                    This image name is dog1.jpg. And name is Snow.<br />Lorem
+                    ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit anim id est laborum. This image name is dog1.jpg. And
+                    name is Snow.<br />Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum. This
+                    image name is dog1.jpg. And name is Snow.<br />Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim
+                    id est laborum. This image name is dog1.jpg. And name is
+                    Snow.<br />Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum. This
+                    image name is dog1.jpg. And name is Snow.<br />Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim
+                    id est laborum. This image name is dog1.jpg. And name is
+                    Snow.<br />Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+
+                  <button
+                    type="button"
+                    class="block_close_btn"
+                    data-modal-close
+                  >
+                    <span class="btn_ttl">メニューを閉じる</span>
+                    <span class="btn_line_top"></span>
+                    <span class="btn_line_bottom"></span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!--jqueryModal.js canvas ここまで-->
+        <!-- Modal End -->
       </footer>
     </div>
 
     <script
+      defer
       type="text/javascript"
       src="/body-scroll-lock/lib/bodyScrollLock.js"
     ></script>
 
-    <script type="text/javascript" src="/jquery.common/js/jquery.js"></script>
     <script
+      defer
       type="text/javascript"
-      src="/jquery.common/js/template/content_list_block.js"
+      src="/jquery.common/js/jquery.js"
     ></script>
     <script
+      defer
       type="text/javascript"
       src="../lib/common/js/jqueryModal.js"
     ></script>
 
-    <script type="text/javascript" src="../lib/common/js/scripts.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="../lib/common/js/scripts.js"
+    ></script>
   </body>
 </html>

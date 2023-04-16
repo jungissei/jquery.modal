@@ -1,0 +1,122 @@
+@use "sass:math";
+@use "../../../../../jquery.common/css/base/mixin" as *;
+
+
+@include mq(pc){
+  // ----------------------------------------------------------------------------
+  // Modal
+  // ----------------------------------------------------------------------------
+  .area_modal {
+
+    // Canvas size related
+    $canvas_width: 80%;
+    $canvas_max_width: 600px;
+    $canvas_height: 100vh;
+
+    // Canvas color related
+    $canvas_bg: #ccc;
+    $menu_off_canvas_color: rgba(#000, 0.7);
+
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    cursor: pointer;
+    background-color: $menu_off_canvas_color;
+    align-items: center;
+    justify-content: center;
+
+
+    .layout_inner{
+      width: 100%;
+    }
+
+    &[aria-hidden="false"]{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // --------------------------------------
+    // Modal Block
+    // --------------------------------------
+    .modal_block  {
+      position: relative;
+      padding: 45px 30px;
+      background-color: #ccc;
+      max-width: 600px;
+      margin-right: auto;
+      margin-left: auto;
+      cursor: default;
+
+      .block_thumb {
+        text-align: center;
+      }
+      .block_ttl {
+        margin-top: 13px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .block_txt {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      // --------------------------------------
+      // Modal Button
+      // --------------------------------------
+      .block_close_btn {
+        // Button size related
+        $btn_with: 50px;
+        $btn_height: 50px;
+
+        // Button line related
+        $btn_line_width: 60%;
+        $btn_line_height: 2px;
+
+        // Button color related
+        $btn_color: transparent;
+        $btn_line_color: #716e77;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $btn_color;
+        width: $btn_with;
+        padding: math.div($btn_height, 2) 0;
+        cursor: pointer;
+
+        .btn_ttl{
+          display: none;
+        }
+
+        span[class^="btn_line"]{
+          display: block;
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin-right: auto;
+          margin-left: auto;
+          background-color: $btn_line_color;
+          width: $btn_line_width;
+          height: $btn_line_height;
+        }
+
+        .btn_line_top {
+          top: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(45deg);
+        }
+
+        .btn_line_bottom {
+          bottom: calc(50% - (#{$btn_line_height} / 2));
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
