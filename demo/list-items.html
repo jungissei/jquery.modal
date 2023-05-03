@@ -19,12 +19,12 @@
     />
     <link
       rel="stylesheet"
-      href="../lib/pages/index/css/style.css"
+      href="../lib/pages/list-items/css/style.css"
       type="text/css"
       media="all"
     />
 
-    <title>jQuery Modal / 基本モーダル</title>
+    <title>jQuery Modal / 一覧形式</title>
   </head>
   <body>
     <div id="wrapper">
@@ -33,22 +33,18 @@
           <div class="layout_inner">
             <div class="layout_container">
               <div class="layout_width">
-                <h1 class="ttl_page">jQuery Modal / 基本モーダル</h1>
+                <h1 class="ttl_page">jQuery Modal / 一覧形式</h1>
               </div>
             </div>
           </div>
         </div>
       </header>
       <main>
-        <section class="page_layout layout1">
+        <section id="content_list_block" class="page_layout layout1">
           <div class="layout_inner">
             <div class="layout_container">
               <div class="layout_width">
-                <div class="wrap_btn">
-                  <button class="modal_demo_btn" data-modal-open="modal_dog">
-                    モーダルを開く
-                  </button>
-                </div>
+                <div id="dog_items" class="content_items"></div>
               </div>
             </div>
           </div>
@@ -74,31 +70,7 @@
                 >
                   <div data-modal-focus-trap-first tabindex="0"></div>
 
-                  <div class="modal_content">
-                    <div class="block_thumb">
-                      <img
-                        src="/jquery.common/img/dog1.jpg"
-                        alt=""
-                        width="640"
-                        height="426"
-                        decoding="async"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h2 id="modal_ttl_dog1" class="block_ttl">Snow</h2>
-                    <p id="modal_desc_dog1" class="block_txt">
-                      This image name is dog1.jpg. And name is Snow.<br />Lorem
-                      ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-
+                  <div class="modal_content"></div>
                   <button
                     type="button"
                     class="block_close_btn"
@@ -139,7 +111,7 @@
     <script
       defer
       type="text/javascript"
-      src="../lib/pages/index/js/scripts.js"
+      src="../lib/pages/list-items/js/scripts.js"
     ></script>
   </body>
 </html>

@@ -86,13 +86,17 @@
         position: absolute;
         top: 0;
         right: 0;
+        overflow: hidden;
         background-color: $btn_color;
         width: $btn_with;
         padding: math.div($btn_height, 2) 0;
         cursor: pointer;
 
         .btn_ttl{
-          display: none;
+          position: absolute;
+          top: -200%;
+          left: -200%;
+          opacity: 0;
         }
 
         span[class^="btn_line"]{

@@ -1,0 +1,18 @@
+
+.wrap_btn{
+  text-align: center;
+  padding-top: 50px;
+
+  .modal_demo_btn{
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}

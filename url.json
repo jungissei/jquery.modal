@@ -1,6 +1,9 @@
 [
   {
-    "text" : "Modal",
+    "text" : "Modal / 基本モーダル",
     "url" : "/jquery.modal/demo/index.html"
+  },{
+    "text" : "Modal / 一覧形式",
+    "url" : "/jquery.modal/demo/list-items.html"
   }
 ]
