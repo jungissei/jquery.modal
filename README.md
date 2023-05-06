@@ -69,16 +69,6 @@ $(function(){
           <div data-modal-focus-trap-first tabindex="0"></div>
 
           <div class="modal_content">
-            <div class="block_thumb">
-              <img
-                src="/jquery.common/img/dog1.jpg"
-                alt=""
-                width="640"
-                height="426"
-                decoding="async"
-                loading="lazy"
-              />
-            </div>
             <h2 id="modal_ttl_dog1" class="block_ttl">Snow</h2>
             <p id="modal_desc_dog1" class="block_txt">
               This image name is dog1.jpg. And name is Snow.<br />Lorem
