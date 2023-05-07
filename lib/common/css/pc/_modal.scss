@@ -53,9 +53,18 @@
       margin-right: auto;
       margin-left: auto;
       cursor: default;
+      max-height: calc(100vh - 60px);
+
+      @include only_safari{
+        max-height: calc(100svh - 60px);
+      }
 
       .block_thumb {
         text-align: center;
+
+        img{
+          width: 100%;
+        }
       }
       .block_ttl {
         margin-top: 13px;

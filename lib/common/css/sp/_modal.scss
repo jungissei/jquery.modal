@@ -51,6 +51,11 @@
       max-width: 600px;
       margin-right: auto;
       margin-left: auto;
+      max-height: calc(100vh - 60px);
+
+      @include only_safari{
+        max-height: calc(100svh - 60px);
+      }
 
       .block_thumb {
         text-align: center;
