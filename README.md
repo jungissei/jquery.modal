@@ -10,7 +10,7 @@
 ```html
 <link rel="stylesheet" href="/jquery.modal/lib/common/css/style.css">
 <script defer type="text/javascript" src="/jquery.common/js/jquery.js"></script>
-<script src="/jquery.modal/lib/common/js/jqueryModal.js"></script>
+<script defer src="/jquery.modal/lib/common/js/jqueryModal.js"></script>
 <script>
 $(function(){
   let $open_btn = $('[data-modal-open="modal_dog"]'),
